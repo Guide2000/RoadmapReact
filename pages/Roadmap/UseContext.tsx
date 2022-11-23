@@ -1,7 +1,7 @@
 import React, { useState, createContext, useContext } from "react";
 const Context = () => {
 
-    const [user, setuser] = useState("NNN");
+    const [user, setuser] = useState("Context");
     const UserContext = createContext();
 
     return (
@@ -9,7 +9,7 @@ const Context = () => {
             <UserContext.Provider value={user}>
                 <h1>Parent Component</h1>
                 <ChildComponent1 />
-            </UserContext.Provider>
+            </UserContext.Provider> 
         </div>
     );
 
@@ -30,7 +30,7 @@ const Context = () => {
         );
     }
     function ChildComponent3() {
-        const user = useContext(UserContext)
+        const user = useContext(UserContext) //useContext 
         return (
             <>
                 <h3> Child Component 3 </h3>

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 const UseHook = () => {
     const [age, setage] = useState(1)
-    const [name, setname] = useState("Guide");
+    // const [name, setname] = useState("Guide");
     const [data, setData] = useState([]); // Use State เก็บ State ข้อมูล
 
     useEffect(() => {
@@ -15,9 +16,15 @@ const UseHook = () => {
 
     return (
         <div style={{ textAlign: 'center' }}>
-            <p>My name {name} I am {age -1} year old. By useState</p>
+            <p>My name {data.name} I am {age - 1} year old. By useState</p>
+            <br />
+
+            <Image src={data.sprites} width={500} height={500} alt={data.front_default} />
+
+            <br />
+            <br />
             <button onClick={() => setage(age - 1)}>click for Decrease age</button>
-            <button onClick={() => setname("Natthamongkhon")}>click for Change Name</button>
+            {/* <button onClick={() => setname("Natthamongkhon")}>click for Change Name</button> */}
             <button onClick={() => setage(age + 1)}>click for Increase age</button>
         </div>
     );
